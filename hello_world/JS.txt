@@ -1,0 +1,235 @@
+I) Podstawy https://www.codecademy.com/courses/introduction-to-javascript/lessons/introduction-to-javascript/exercises/math-operators
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+1) Podstawy podstaw
+1.1) console.log(4,'tekst'); dziala tak sam jak prtin (w nawiasach umieszczamy wartosc ktora ma sie wyswietlic, do tego uzwglednia dzialania matematyczne
+1.2) Komentarze - zapisywane w ten sposob // komentarz dla jednej lini /* komentarz dla wielu linii */
+1.3) operator '.' (kropka) jako metoda np dla funkcji lenght czyli: console.log('dlugosc_znakow'.lenght)
+1.4) Metody w JS - sa to meotody dzialania akcje ktore mozemy wykonac
+	a) .startsWith() - jesli wystepuje szukany znak zwraca true jesli nie to false: np console.log('Hey').startsWith('H'));
+	b).toUpperCase() - zamienia male na duze console.log('hello'.toUpperCase()); 
+1.5) Obiekty funkcji Match.() oraz dzialania na funkcjach np 
+console.log(Math.random()*100); 
+console.log(Math.floor(Math.random() * 100));
+console.log(Math.ceil(43.8));
+console.log(Number.isInteger(2017));
+2) Zmienne
+2.1) Tworzenie zmiennych: var nazwa_zmiennej ='wartosc'; //(istotne ze trzeba dodac slowko var - oznaczajace zmienna) console.log(nazwa_zmiennej); // wypisanie zmiennej
+2.2) Poinformowanie o tym ze zmienna bedzie zmieniaala swoja wartosc za pomocoa instrukcji 'let' , jest to zastapienie dla var (tzn inna sposob deklaracji zmiennych ktore moga zmieniac wartosc )np 
+let meal = 'Enchiladas';
+console.log(meal); // Output: Enchiladas
+meal = 'Burrito';
+console.log(meal); // Output: Burrito
+2.3) Stałe - definiujemy za pomoca instrucji const np const myName = 'Gilberto';
+2.4) String Interpolation dodawanie do stringa zmiennej (cos jak funkcja format w pythonie) zmienna poprzedzeam znakiem $ w nawiasach {} np:
+	const myPet = 'armadillo';
+	console.log(`I own a pet ${myPet}.`);
+2.5) Funkcja typeof - zwraca jaki tym ma dana zmienna np:
+const unknown1 = 'foo'; console.log(typeof unknown1); // Output: string
+3) If/else i switch
+if (warunek)
+	{instrukcja}
+else if (warunek)
+{instrukcja}
+else
+{instrucja}
+3.1) {Operatory logiczne w tym < > ===  && (and) ; || (or) ; ! (not)
+3.2) zmienna przyjmuje 2 rozne wartosci poprzez operator OR - czyli kod ponizej to skrocona wersja if else np:
+let defaultName = username || 'Stranger';
+3.3) Switch
+switch (zmienna_na_ktorej_operujemy)
+{
+case 'warunek1':
+instrukcja;
+break;
+case 'warunek2':
+instrukcja;
+break;
+case 'warunek3':
+instrukcja;
+break;
+default:
+instrucja
+break;
+}
+4) Funkcje https://www.codecademy.com/courses/introduction-to-javascript/lessons/functions/exercises/intro-to-functions
+4.1) Definicja funkcji:
+function nazwa funkcji (jej_parametry)
+{
+cialo funkcji
+return 'cos_tam'
+}
+4.2) zwracanie poprzez return innej funkcji 
+function monitorCount(rows, columns) {
+  return rows * columns;
+}
+function costOfMonitors(rows, columns) {
+ return monitorCount(rows, columns)  * 200;// monitorCount to nazwa innej funkcji
+}
+const totalCost = costOfMonitors(5, 4);
+console.log(totalCost);
+4.3) Stala przypisana do funkcji 
+const logSkyColor = () => {
+  let color = 'blue'; 
+  console.log(color); // blue 
+}
+4.4) Zapis strzalkowy funkcji uzytwajac takiego zapisu gdzie stala przypisujemy do funkcji czyli const plantNeedsWater = function(day) {}; mozna uzyc 
+const plantNeedsWater = (day) => {};
+5) Scope (zakres) https://www.codecademy.com/courses/introduction-to-javascript/lessons/scope
+6)Tablice https://www.codecademy.com/courses/introduction-to-javascript/lessons/arrays/exercises/arrays
+6.1) Tablice - a dokladniej zawartosc tabic umieszczamy w nawiasach []
+6.2) Tablice mozna tak samo printowac jak np w pythonie (np dzieki console.log()), tak samo mozna wyciagac pojedynczy element tablicy np console.log(tablica[2]) 
+6.3) Wraz z tablicami mozna uzywac funkcji tablic (tak jak np funccja .lenght pokaze ilosc elementow tablicy kolejna to np .push (czyli dodawanie kolejnego elemntu do tablicy na jej koncu), pop czyli usuwanie )
+7) Petle
+7.1) przyklad petli for (klasyczny wyglad)
+for (let counter = 0; counter < 4; counter++) 
+{
+  console.log(counter);
+}
+7.2) Petla for dla tablic
+for (let i = 0; i < animals.length; i++)
+{
+  console.log(animals[i]);
+}
+7.3) Petla while
+let counterTwo = 1;
+while (counterTwo < 4) //dziala tak dlugo dopoki warunek jest prawdziwy
+{
+  console.log(counterTwo);
+  counterTwo++;
+}
+7.4)Petdla:  Do  ... while 
+do 
+{
+  countString = countString + i;
+  i++;
+} 
+while (i < 5);
+7.5 ) instrukcja break - w sumie zapis to break;  = tez wystepuje
+8) Iteratory (przepochodzenie po elementach np tablicy jak np w petli for za pomoca takich funkcji jak: .forEach(), .map(), .filter(), findIndex(), reduce (),
+8.1) Przyklad uzycia operatora forEach [zostanie wyswietlone dla kazdego elementu tablicy fruits test z consol loga (czyli tak jakby to byla petla for)
+const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+// Iterate over fruits below
+fruits.forEach(fruit => console.log(`I want to eat a ${fruit}.`))
+
+9) Obiekty https://www.codecademy.com/courses/introduction-to-javascript/lessons/objects/exercises/objects
+9.1) Tworzenie pustego obiektu ? Ogolnie bardziej to wyglada  tablice asocjacyjna - tworzymy tak jak tablice ale z nawiasami {};
+np: let spaceship = {}; // spaceship is an empty object
+let spaceship = {
+  'Fuel Type': 'diesel',
+  color: 'silver'
+}
+9.2) Jednak tutaj juz widac wywolywanie atrybutow obiektow juz w spoosb obiektowy
+let spaceship = {
+  homePlanet: 'Earth',
+  color: 'silver'
+};
+spaceship.homePlanet; // Returns 'Earth',
+spaceship.color; // Returns 'silver',
+9.3) Drugi sposob odwolania do obiektu w sposob tablicowy czyli
+let spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5
+};
+spaceship['Active Duty'];   // Returns true
+spaceship['Fuel Type'];   // Returns  'Turbo Fuel'
+spaceship['numCrew'];   // Returns 5
+spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
+9.4) Tworzenie metoda (wyglada to jak tworzenie funkcji wewnatrz (mozna tworzyc kilka metod dla obiektu przyczy oddzielamy je przecinkiem, ) obiektu czyli):
+const alienShip = {
+  invade () //invade to nazwa metody - mozna tez uzyc takiego zapisu invade function ()
+  { 
+    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
+  }
+};
+alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
+9.4.1) (ogolnie metody moga byc atrybutami czyli zmienna:null, telescope: {console.log('hey')}; itd a do tego tez moga sie zagniezdzac https://www.codecademy.com/courses/introduction-to-javascript/lessons/objects/exercises/nested-objects
+9.5) Przechodzenie petla [ for .. in ] przez obiekty 
+for (let crewMember in spaceship.crew) {
+  console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`);
+}
+10) Obiekty ciag dalszy https://www.codecademy.com/courses/introduction-to-javascript/lessons/advanced-objects
+10.1) Operator this (tak jak w php PDO oraz w pythonie operator self). Operator 'this' odnosi sie do atrybutu obiektu.
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(this.dietType);  // tutaj jest widoczny operator this - czyli odwolanie  do atrybutu klasy tak jak operator self
+  }
+};
+goat.diet(); 
+10.2) Java Sript nie ma wbudowanej prywatnosci obiektow (jak np w php, albo jak w pythonie metod prywatnych oznaczonych __). Jedynie istnieja konwecja oznaczenia
+prywatnych metod i atrybutow znakiem poprzedzajacym nazwe '_' (pojedyncze podkreslenie) 
+10.3) Sposob na tworzenie obiektow (np kilku - w sumie tak samo jak w innych jezykach)
+const robotFactory = (model, mobile) => {
+  return {
+    model : model,
+		mobile: mobile,
+		beep () { 
+      console.log('Beep Boop'); 
+    }
+	};
+};
+const tinCan = robotFactory('P-500', true);
+tinCan.beep();
+10.3) W przypisaniu zniszczonym tworzymy zmienną z nazwą klucza obiektu, która jest opakowana w nawiasy klamrowe {} i przypisujemy do niej obiekt.  Odwolywanie i do atrybutu obiektu i tworzenie nowej wartosci na podstawie innych obiektow np
+const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+zamiast uzywac podobnej skladni (np do pythonowej) 
+const residence = vampire.residence; 
+console.log(residence); // Prints 'Transylvania' 
+	mozna uzyc takiego odwolania:
+const { residence } = vampire; 
+console.log(residence); // Prints 'Transylvania'
+
+11) Klasy 
+11.0) Przykladowy klas z klasa DOG i utworzeniem obiektu na jej podstawie oraz wywolaniem metod i atrybutow
+class Dog {
+  constructor(name)  // utworzenie konstruktora
+  {
+    this._name = name; // przypisanie wartosci z konstruktora dla atrybutu this._name
+    this._behavior = 0;
+  }
+  get name() // getter  dla atrybutu name poprzez stworzenie metody name (ewentualnie get name)
+  {
+    return this._name;
+  }
+  get behavior() 
+  {
+    return this._behavior;
+  }   
+  incrementBehavior() 
+  {
+    this._behavior ++;
+  }
+}
+const halley = new Dog('Halley'); // utworzenie obiektu
+console.log(halley.name); // Print name value to console
+console.log(halley.behavior); // Print behavior value to console
+halley.incrementBehavior(); // Add one to behavior
+console.log(halley.name); // Print name value to console
+console.log(halley.behavior); // Print behavior value to console
+11.2) Dziedziczenie klas:
+class Cat extends Animal // sposob zapisu rozzszenia klasy Cat o klase Animal
+{
+super (name) //wywolanie konstruktora klasy nadrzednej dzieki instrukcji super
+}
+11.3) Metody statyczne w klasie tworzac metode statyczna przed nazwa metody dodajemy slowko static np:
+  static generateName() 
+  {
+    const names = ['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];
+    const randomNumber = Math.floor(Math.random()*5);
+    return names[randomNumber];
+  }
+   
+B)BROWSER COMPATIBILITY AND TRANSPILATION https://www.codecademy.com/courses/introduction-to-javascript/lessons/browser-compatibility-and-transpilation/exercises/browser-compatibility-introduction
+
