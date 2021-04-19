@@ -6,7 +6,7 @@
 var liczba=10;
 var liczba2=12;
 
-    if (liczba==10 || liczba == 12)
+    if (liczba==10 || liczba == 12) // ||(or) 
     {
         console.log("Zmienna o nazwie ",liczba," spelnia warunek");
     }
@@ -14,7 +14,7 @@ var liczba2=12;
     {
         console.log("Zmienna o nazwie ",liczba2, "spelnia warunek ze szukana libcza ma wartosc 12");
     }
-    else if (liczba == 10 && liczba2 == 12)
+    else if (liczba == 10 && liczba2 == 12)  //&& (and)
     {
         console.log("Obydwa warunki sa spelnione");
     }
@@ -26,7 +26,7 @@ if (truee) // warunek ze zmienna truue ma wartosc logiczna prawda bez potrzeby d
 {
     console.log("Zmienna true ma wartosc true");
 }
-else if (!truee)
+else if (!truee) //!(not)
 {
     console.log("zmienna truue ma tak naprawde wartosc false");
 }

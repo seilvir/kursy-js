@@ -1,8 +1,8 @@
 //Struktura metody .foreach tak naprawdy jest to wywolywaniefunkcji zapis w postaci funkcji wygladatak
 const artists2 = ['Picasso', 'Kahlo', 'Matisse', 'Utamaro'];
-artists2.forEach(function(artists2) //taknprawde nazwa funkcji moze byc dowolna
+artists2.forEach(function(artists3) //taknprawde nazwa funkcji moze byc dowolna
   {
-  console.log(artists2 + ' is one of my favorite artists.'); //wazne zebyzwracana wartosc tablicy byla tak samo nazwana jak funkcja
+  console.log(artists3 + ' is one of my favorite artists.'); //wazne zebyzwracana wartosc tablicy byla tak samo nazwana jak funkcja
   }
   );
 //ponizej ta sama funkcja w zapisie alternatywnym (czesciej uzywanym czyli (nazwa_tab =>{})

@@ -1,26 +1,80 @@
+//helper functions
+// Formats response to look presentable on webpage
+const renderResponse = (res) => {
+  // Handles if res is falsey
+  if(!res){
+    console.log(res.status);
+  }
+  // In case res comes back as a blank array
+  if(!res.length){
+    responseField.innerHTML = "<p>Try again!</p><p>There were no suggestions found!</p>";
+    return;
+  }
+
+  // Creates an empty array to contain the HTML strings
+  let wordList = [];
+  // Loops through the response and caps off at 10
+  for(let i = 0; i < Math.min(res.length, 10); i++){
+    // creating a list of words
+    wordList.push(`<li>${res[i].word}</li>`);
+  }
+  // Joins the array of HTML strings into one string
+  wordList = wordList.join("");
+
+  // Manipulates responseField to render the modified response
+  responseField.innerHTML = `<p>You might be interested in:</p><ol>${wordList}</ol>`;
+  return
+}
+
+// Renders response before it is modified
+const renderRawResponse = (res) => {
+  // Takes the first 10 words from res
+  let trimmedResponse = res.slice(0, 10);
+  // Manipulates responseField to render the unformatted response
+  responseField.innerHTML = `<text>${JSON.stringify(trimmedResponse)}</text>`;
+}
+
+// Renders the JSON that was returned when the Promise from fetch resolves.
+const renderJsonResponse = (res) => {
+  // Creates an empty object to store the JSON in key-value pairs
+  let rawJson = {};
+  for(let key in res){
+    rawJson[key] = res[key];
+  }
+  // Converts JSON into a string and adding line breaks to make it easier to read
+  rawJson = JSON.stringify(rawJson).replace(/,/g, ", \n");
+  // Manipulates responseField to show the returned JSON.
+  responseField.innerHTML = `<pre>${rawJson}</pre>`;
+}
+
+
 //fetch GET https://www.codecademy.com/courses/introduction-to-javascript/lessons/requests-ii/exercises/fetch-get-requests-ii
 const fetch = require('node-fetch'); // zalaczenie fetch
+// Formats response to look presentable on webpage
 
-fetch('https://api-to-call.com/endpoint') //podanie adresu url jako parametru funkcji fetch
-.then(response => { //Połącz metodę .then () na końcu funkcji fetch () i przekaż jej funkcję strzałki wywołania zwrotnego sukcesu jako jej pierwszy argument. Funkcja wywołania zwrotnego sukcesu przyjmuje jeden parametr - odpowiedź.   .then () zostanie uruchomiony dopiero po rozwiązaniu obietnicy statusu funkcji fetch ().
-  if (response.ok) { //W funkcji wywołania zwrotnego odpowiedzi sprawdź właściwość 'response.ok' odpowiedzi w instrukcji warunkowej. 
-    return response.json(); //W bloku kodu instrukcji warunkowej zwróć response.json ().     Powodem, dla którego testujemy właściwość ok obiektu odpowiedzi, jest to, że będzie to wartość logiczna. Jeśli nie było błędów, response.ok będzie prawdziwe, a Twój kod zwróci response.json ().
-  }
-  else
-  {
-  throw new Error('Request failed!'); // wyrzuca error jesli kod zgłosi  błąd, gdy parametr response.ok jest fałszywy.
-  }
-}, 
-networkError => {//Dodaj drugi argument do .then (), będzie to funkcja strzałkowa, która obsłuży nasze awarie. Oddziel pierwszą funkcję zwrotną od drugiej przecinkiem.
-  console.log(networkError.message); // Druga funkcja zwrotna przyjmuje pojedynczy parametr, networkError.
-  }
-)
 
-/* Dodanie kolejnej metody .then () na końcu pierwszej metody .then ().
-Przekaż nowej metodzie .then () funkcję zwrotną, która jako parametr przyjmuje jsonResponse i zwraca jsonResponse.
-Drugie pomyślne wywołanie zwrotne .then () nie zostanie uruchomione, dopóki poprzednia metoda .then () nie zakończy działania. Nie będzie również działać, jeśli wcześniej został zgłoszony błąd.*/
-.then(jsonResponse => 
-  {
-  return jsonResponse;
+
+// Information to reach API
+const url = 'https://api.datamuse.com/words'
+const queryParams ='?sl='
+// Selects page elements
+const inputField = document.querySelector('#input');
+const submit = document.querySelector('#submit');
+const responseField = document.querySelector('#responseField');
+
+// AJAX function
+const getSuggestions = () => {
+const wordQuery =inputField.value
+const endpoint = `${url}${queryParams}${wordQuery}`
+}
+
+// Clears previous results and display results to webpage
+const displaySuggestions = (event) => {
+  event.preventDefault();
+  while(responseField.firstChild){
+    responseField.removeChild(responseField.firstChild);
   }
-);
+  getSuggestions();
+};
+
+submit.addEventListener('click', displaySuggestions);

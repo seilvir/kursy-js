@@ -1,6 +1,6 @@
 //Struktura petli while - wykonuje sie dopoki warunek jest prawdziwy (dopoki jest spelniony)
 let licznik = 1;
-while (licznik <= 10)
+while (licznik <= 12)
 {
   console.log(`Wykonanie petli nr ${licznik} !` )
   licznik++ ;//lub jak kto woli licnzik = licnzik + 1

@@ -17,8 +17,7 @@ const wykonajwhatlike=goat.whatlike("zielsko")
 
 
 //W JAVA SCRIPT NIE MA Podzialu na wlasciwosci i metody publiczne i prywatne - istnieje jedynie konwecja ze to co ma byc 
-//prywatne oznaczamy znakeim podkreslenia _
-np:
+//prywatne oznaczamy znakeim podkreslenia _np:
 const robot = {
   _energyLevel: 100, //tutaj zmienna _energyLevel ma być traktowana jako zmienna o zasiegu prywatnym
   recharge(){
