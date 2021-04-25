@@ -24,6 +24,21 @@ function funkcja_pomocnicza_typ_string (jakas_zmienna : Number) : String  // typ
     return 'jakis tekst' // typ return to :String poniewaz zostalo to zatypowane przy deklaracji funkcji
 }
 
+10) Union type pozwala na opisanie typu, który jest jednym typem lub drugim typem. Przykładowo możemy stworzyć funkcję, która jako argument przyjmuje number lub Date:
+function formatDate(date : number | Date) {}
+
+11) Intersection type jest blisko związany z union type, ale pozwala na opisanie typu, który ma cechy kilku typów na raz. Najczęściej wykorzystywany jest z interfejsami. 
+Korzystając z interfejsów z poprzedniej części, wyobraźmy sobie, że chcemy stworzyć funkcję, która oczekuje obiektu będącego na raz Serializable i Drawable:
+function mojaFunkcja(obiekt:Serializable & Drawable) {  
+    // obiekt na pewno ma metody toJSON i draw!
+}
+
+12) Aliasy typow (czyli przypisanie zmienne_typu globalnego typu ).Możemy na przykład zdefiniować typ Name, który będzie stringiem:
+type Name = string;
+class User {  
+    firstName:Name;
+}
+
 
 Jesli np dla typu boolean przypiszemy string to uruchomieniu pojawi sie blad o niezgodnosci typow
 */
