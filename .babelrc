@@ -1,0 +1,4 @@
+{
+"presets": ["env"] //dodanie obiektu prestets
+}
+//Po uruchomieniu Babel szuka w .babelrc, aby określić wersję początkowego pliku JavaScript. W tym przypadku ["env"] instruuje Babel, aby przetransponował dowolny kod z wersji ES6 i nowszych.

@@ -1,0 +1,5 @@
+#commments, ignore file and folders below. test/**/*.js  znaki ** oznaczaja ze przeszukiwane sa wszystkie pliki w kazdym folderze o znaku rozszrzeniu .js  [tzw recursive globe]
+#
+node_modules
+.vscode
+
