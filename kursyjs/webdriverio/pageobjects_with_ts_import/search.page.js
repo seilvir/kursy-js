@@ -21,6 +21,16 @@ class SearchPage extends Page {
                 return $('#gh-cat option:nth-child(1)');
         }
 
+        get fashionbutton()
+        {
+                return $('//*[contains(@class,"hl-cat-nav__js-tab")][2]');
+        }
+
+        get fashionWatches ()
+        {
+                return $$('//a[text ()= "Watches"]')[1]
+        }
+
         open (){ // metoda super jest nadpisywana
             super.open('https://www.ebay.com:/') //tutaj podawany jest url do metody nadgrzednej 
         }

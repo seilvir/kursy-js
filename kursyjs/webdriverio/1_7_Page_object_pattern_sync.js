@@ -20,6 +20,10 @@ describe('NPM - zegarki1', () => {
          WatchesPage.open(); //podawanie tytulu strony ktora chce sie otworzyc 
          expect(WatchesPage.promobanner).toBeDisplayed();
     });
+    it('NPM - zegarki2 $$',  () => {
+
+     expect(WatchesPage.PromoBannerArray).toBeDisplayed();
+});
     it('NPM - zegarki3',  () => {
          expect(WatchesPage.infotitle).toHaveTextContaining('Rolex');
     });

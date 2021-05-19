@@ -20,7 +20,10 @@ class SearchPage extends Page {
         {
                 return ($('#gh-cat option:nth-child(1)'));
         }
-
+        get PromoBannerArray()
+        {
+                return $$('section.b-promobanner')[0] // tutaj $$ co oznacza findElements - czyli tablice elementu - natomiast metoda zwraca pierwszy element 
+        }
         open (){ // metoda super jest nadpisywana
             super.open('https://www.ebay.com:/') //tutaj podawany jest url do metody nadgrzednej 
         }
