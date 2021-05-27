@@ -3,7 +3,7 @@
 //section.czesc_nazwy_klasy = wyszukiwanie unikalnego elementu DOM = tutaj jest to wyciagniecie klasy z <section class=b-promobanner loremi psum>
 
 
-describe('Watches page', () => {
+describe('Watches page async', () => {
     it('Is banner display', async () => {
          await browser.url('https://www.ebay.com/b/Watches-Parts-Accessories/260324/bn_2408535'); //podawanie tytulu strony ktora chce sie otworzyc 
          const promobanner = await $('section.b-promobanner') //znalezienie elementu po id klasy 
@@ -11,7 +11,7 @@ describe('Watches page', () => {
     });
     it('Banner title', async  () =>{
         const nowy_element_tytul = await $('.b-promobanner__info-title') // to jest szukanie po unikalnej nazwie klasy danego elementu
-        await expect(nowy_element_tytul).toHaveTextContaining('Up to') // toHaveTextContaining - sprawdzanie czy dany element znajduje tekst
+        await expect(nowy_element_tytul).toHaveTextContaining('off watches') // toHaveTextContaining - sprawdzanie czy dany element znajduje tekst
     });
     it ('Banner linnk have url',async () =>{
         const znajdz_linka = await $('.b-promobanner__info-btn')
@@ -21,8 +21,8 @@ describe('Watches page', () => {
     });
     it ("Is banner are clickable", async ()=>{
         const znajdz_linka = await $('.b-promobanner__info-btn')
-        await znajdz_linka.click(); // klikniecie wwe wskazany w zmiennej elememnt ktory jest linkiem
-        await expect(browser).toHaveUrl('https://www.ebay.com/e/fashion/rolex-021720')
+         znajdz_linka.click; // klikniecie wwe wskazany w zmiennej elememnt ktory jest linkiem
+         expect(browser).toHaveUrl('https://www.ebay.com/b/Watches-Parts-Accessories/260324/bn_2408535')
     });
 });
 
