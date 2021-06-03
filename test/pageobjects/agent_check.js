@@ -1,6 +1,6 @@
 
 const Agent_search = require('../pageobjects/agent_search_page.js');
-const Agent_check_method = require('../pageobjects/agent_check_methods_page.js');
+const Agent_check_method = require('./agent_methods_page.js');
 
 
 

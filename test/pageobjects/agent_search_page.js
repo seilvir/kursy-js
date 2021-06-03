@@ -41,6 +41,30 @@ class Agent_search extends Page{
     {
         return $('//div[contains(@class, "styles__AgentName")][1]');
     }
+
+    get agent_details_link()
+    {
+        return $('//div[contains(@id,"agent-search-view-details")]')
+    }
+
+    async agent_search_from_main ()
+    {
+        
+        const agent_office_click_button = await this.from_main_find_agent_or_office
+        await agent_office_click_button.click();
+        //const imie = await this.from_main_input_agent_first_name
+        //await imie.addValue('John');
+        // Pierwszy sposob  czyli await (await funkcja).kolejna_czynnosc
+        await (await this.from_main_input_agent_first_name).addValue('John')
+        //drugi sposob czyli przypisywanie zmiennych
+        const nazwisko = await this.from_main_input_agent_last_name;
+        await nazwisko.addValue('Adams');
+        //
+        const search_klik = await this.from_main_agent_search_button
+        await search_klik.click()
+    }
+
+
     //open (){
     //    super.open('https://exitrealty.com/agent/John/Adams/240654')
     //}
