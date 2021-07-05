@@ -13,8 +13,8 @@ var zmiennadwa = zmienna.toLowerCase(); // zmianan na male litery
 console.log(zmiennadwa.charAt()); // to 
 console.log("drukowanie duzych liter zmiennej zmienne_duze_litery",zmienna_duze_litery.charCodeAt()); 
 console.log(zmienna.length); // zwraca dlugosc stringa
-var booleonow0o=zmienna_duze_litery.trim() //trim usuwa biale znaki
-
+var booleonow0o=zmienna_duze_litery.trim() //trim usuwa biale znaki z obu koncow tekstu
+console.log(booleonow0o)
 var what_replace1='g'; // funckja .replace - zamienia ciag znakow na inny
 var where_replace='dolce gabana' //string nr ktory bedzie zamieniany
 
